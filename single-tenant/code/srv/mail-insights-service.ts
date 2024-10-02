@@ -404,7 +404,7 @@ export default class CommonMailInsights extends ApplicationService {
                       "Also consider given additional information if available to enhance the response."
                     : "Formulate a response to the original mail using given additional information.") +
                 "Address the sender appropriately.\n{format_instructions}\n" +
-                "Make sure to escape special characters by double slashes except '\n'.",
+                "Make sure to escape special characters by double slashes, but do not escape the character '\n'.",
             inputVariables: rag ? ["context"] : [],
             partialVariables: { format_instructions: formatInstructions }
         });

@@ -2,43 +2,31 @@
 
 export const actions = [
     {
-        value: "Hotel Availability",
-        descr: "It is suggested to check if the requested hotel is available or if an offer can be provided. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
+        value: "Meal Box Availability",
+        descr: "It is suggested to check if the requested meal box is available and can be delivered on time."
     },
     {
-        value: "Hotel Cancelation",
-        descr: "It is suggested to cancel the booked hotel. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
+        value: "Meal Box Cancellation",
+        descr: "It is suggested to cancel the order of the meal box and refund the customer."
     },
     {
-        value: "Hotel Fix",
-        descr: "It is suggested to check the hotel booking and provide information to the sender. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
+        value: "Meal Box Fix",
+        descr: "It is suggested to check the order of the meal box and provide information to the sender."
     },
     {
-        value: "Flight Availability",
-        descr: "It is suggested to check if a flight is available according to the mail request and offer it to the sender. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
+        value: "Ingredient Availability",
+        descr: "It is suggested to check if the requested amount of ingredients for the order is available and if they can be delivered on time."
     },
     {
-        value: "Flight Cancelation",
-        descr: "It is suggested to cancel the previously booked flight. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
+        value: "Ingredient Selection",
+        descr: "It is suggested to respond to the quotations of the vendors providing the ingredients."
     },
     {
-        value: "Flight Fix",
-        descr: "It is suggested to check the flight booking and provide information to the sender. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
-    },
-    {
-        value: "Car Availability",
-        descr: "It is suggested to check for a rental car offer available and offer results to the sender. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
-    },
-    {
-        value: "Car Cancelation",
-        descr: "It is suggested to cancel the previously booked rental car. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
-    },
-    {
-        value: "Car Fix",
-        descr: "It is suggested to check the rental car booking and provide information to the sender. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
+        value: "Ingredient Receipt",
+        descr: "It is suggested to check the ingredients that have been received and compare it to your current stock. Afterwards, provide information to the vendors."
     },
     {
         value: "General Fix",
-        descr: "This is a general ask for help, please check the email and try to provide a response to the request or problem. No further functionality is implemented but an integration with a booking system like Concur could be provided as an option for the user."
+        descr: "This is a general ask for help, please check the email and try to provide a response to the request or problem."
     }
 ];

@@ -25,15 +25,15 @@ const CONFIGURATIONS = process.env["AI_CORE_CONFIGURATIONS"]
     ? JSON.parse(process.env["AI_CORE_CONFIGURATIONS"])
     : [
           {
-              name: "gpt-4-config",
+              name: "gpt-35-turbo-0125-config",
               parameters: [
                   {
                       key: "modelName",
-                      value: "gpt-4"
+                      value: "gpt-35-turbo-0125"
                   },
                   {
                       key: "modelVersion",
-                      value: "0613"
+                      value: "0125"
                   }
               ]
           },
@@ -54,8 +54,8 @@ const CONFIGURATIONS = process.env["AI_CORE_CONFIGURATIONS"]
 
 // SAP AI Core Configurations to be used for different Tasks
 export enum Tasks {
-    CHAT = "gpt-4-config",
-    COMPLETION = "gpt-4-config",
+    CHAT = "gpt-35-turbo-0125-config",
+    COMPLETION = "gpt-35-turbo-0125-config",
     EMBEDDING = "text-embedding-ada-002-config"
 }
 
@@ -111,7 +111,7 @@ export const checkDefaultResourceGroup = async (): Promise<void> => {
         console.log(`Error: Check XSUAA and Destination Service Binding as well as SAP AI Core Destination.`);
         console.log(`Error: Restart CAP service to try again or create the Default Resource Group manually.`);
         console.log("Error: " + e?.message);
-    }
+    } 
 };
 
 /**

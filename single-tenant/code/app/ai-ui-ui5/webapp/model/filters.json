@@ -12,11 +12,11 @@
     "categories": [
         {
             "id": "00",
-            "label": "Booking Assistance"
+            "label": "Order Assistance"
         },
         {
             "id": "01",
-            "label": "Cancellation"
+            "label": "Cancellation or Change"
         },
         {
             "id": "02",
@@ -28,11 +28,11 @@
         },
         {
             "id": "04",
-            "label": "Post-Trip Complaint"
+            "label": "Post-Order Complaint"
         },
         {
             "id": "05",
-            "label": "Problem During Travel"
+            "label": "Procurement"
         },
         {
             "id": "06",
