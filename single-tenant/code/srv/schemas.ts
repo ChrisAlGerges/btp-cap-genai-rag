@@ -14,7 +14,7 @@ export const MAIL_LANGUAGE_SCHEMA = z.object({
         .describe(
             "If the email body is written in " + WORKING_LANGUAGE + ", then return 'true', otherwise return 'false'"
         )
-}).describe(`You are supporting a webshop selling meal-kits which receives emails from customers all over the world. 
+}).describe(`You are supporting a webshop selling meal boxes that receives emails from customers and vendors. 
              Your task is to determine the language of the email in order to trigger translation if needed.`);
 
 // Custom Schema for Mail Insights extraction
@@ -61,7 +61,7 @@ export const MAIL_INSIGHTS_SCHEMA = z.object({
         .describe(`Extract some relevant known facts out of the mail in a structured array, each fact needs a category classifying the fact.
             The categories of the facts can be one of the following:
             - Cuisine - what is the cuisine of the meal
-            - Duration - how long does it take to cook the meal
+            - people - for how many people can the meal be served
             - Difficulty - how difficult is it to cook the recipe at home
             - Calories - how many calories does the meal contain in total
             `),
@@ -87,8 +87,12 @@ export const MAIL_INSIGHTS_SCHEMA = z.object({
             - Ingredient - Ingredient Receipt - check received ingredients and provide results to sender
             - General - General Fix - if any other action is required
         `)
-}).describe(`You are supporting a webshop selling meal boxes which receives emails from customers ordering meals that they can cook by themselves. 
-    The webshop also receives emails from vendors delivering the necessary ingredients for those meals. 
+}).describe(`You are supporting a webshop selling meal boxes which receives emails from customers ordering meals that they can cook by themselves.
+    The webshop offers meals from multiple cuisines, such as Spanish, Frensh, Italian, Chinese, Japanese or Indian.
+    The webshop also offers meals in many varieties, for instance vegetarian meals, taking into account all possible preferences and allergies.
+    On top of that, the meals can vary in amount of calories, difficulty to cook or the number of people that the meal can be served.
+    Besides customers, the webshop also receives emails from vendors delivering the necessary ingredients for those meals.
+    The ingredients for the meals are packaged in exact amount for a specific dish, minimizing food waste and packaging waste.
     Your task is to extract relevant insights out of the emails. Extract the information out of the email subject and body and return a clean and valid JSON format.`);
 
 // Custom Schema for Mail Insights Translation
@@ -119,7 +123,7 @@ export const MAIL_RESPONSE_TRANSLATION_SCHEMA = z.object({
 export const MAIL_RESPONSE_SCHEMA = z
     .object({
         responseBody: z.string().transform((responseBody) => responseBody.replace(/\\\\n/g, "\n"))
-            .describe(`Formulate a response to the mail acting as customer service, include the additional information given in this text.
+            .describe(`Formulate a response to the mail acting as customer service or vendor service, include the additional information given in this text.
                 Formulate the response in the same language as the original. The signature of the response will be "Your HappyMeals Team".`)
     })
     .describe(
