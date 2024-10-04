@@ -87,12 +87,12 @@ export const MAIL_INSIGHTS_SCHEMA = z.object({
             - Ingredient - Ingredient Receipt - check received ingredients and provide results to sender
             - General - General Fix - if any other action is required
         `)
-}).describe(`You are supporting a webshop selling meal boxes which receives emails from customers ordering meals that they can cook by themselves.
+}).describe(`You are supporting a webshop selling meal boxes which receives emails from customers requesting information or help.
     The webshop offers meals from multiple cuisines, such as Spanish, Frensh, Italian, Chinese, Japanese or Indian.
     The webshop also offers meals in many varieties, for instance vegetarian meals, taking into account all possible preferences and allergies.
     On top of that, the meals can vary in amount of calories, difficulty to cook or the number of people that the meal can be served.
     Besides customers, the webshop also receives emails from vendors delivering the necessary ingredients for those meals.
-    The ingredients for the meals are packaged in exact amount for a specific dish, minimizing food waste and packaging waste.
+    The ingredients for the meals are packaged in exact amounts for a specific dish, minimizing food waste and packaging waste.
     Your task is to extract relevant insights out of the emails. Extract the information out of the email subject and body and return a clean and valid JSON format.`);
 
 // Custom Schema for Mail Insights Translation
