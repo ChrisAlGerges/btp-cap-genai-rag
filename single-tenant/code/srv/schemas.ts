@@ -61,7 +61,7 @@ export const MAIL_INSIGHTS_SCHEMA = z.object({
         .describe(`Extract some relevant known facts out of the mail in a structured array, each fact needs a category classifying the fact.
             The categories of the facts can be one of the following:
             - Cuisine - what is the cuisine of the meal
-            - people - for how many people can the meal be served
+            - People - for how many people can the meal be served
             - Difficulty - how difficult is it to cook the recipe at home
             - Calories - how many calories does the meal contain in total
             `),
@@ -88,10 +88,8 @@ export const MAIL_INSIGHTS_SCHEMA = z.object({
             - General - General Fix - if any other action is required
         `)
 }).describe(`You are supporting a webshop selling meal boxes which receives emails from customers requesting information or help.
-    The webshop offers meals from multiple cuisines, such as Spanish, Frensh, Italian, Chinese, Japanese or Indian.
-    The webshop also offers meals in many varieties, for instance vegetarian meals, taking into account all possible preferences and allergies.
-    On top of that, the meals can vary in amount of calories, difficulty to cook or the number of people that the meal can be served.
-    Besides customers, the webshop also receives emails from vendors delivering the necessary ingredients for those meals.
+    The webshop offers meals from multiple cuisines, such as Spanish, Frensh, Italian, Chinese, Japanese, Indian, and other varieties like vegetarian meals.
+    Besides, the webshop receives emails from vendors delivering the necessary ingredients for those meals.
     The ingredients for the meals are packaged in exact amounts for a specific dish, minimizing food waste and packaging waste.
     Your task is to extract relevant insights out of the emails. Extract the information out of the email subject and body and return a clean and valid JSON format.`);
 
