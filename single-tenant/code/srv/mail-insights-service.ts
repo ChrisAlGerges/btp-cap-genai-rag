@@ -404,7 +404,8 @@ export default class CommonMailInsights extends ApplicationService {
                       "Also consider given additional information if available to enhance the response."
                     : "Formulate a response to the original mail using given additional information.") +
                 "Address the sender appropriately.\n{format_instructions}\n" +
-                "Make sure to escape special characters by double slashes, but do not escape the character '\n'.",
+                "Make sure to escape special characters by double slashes." +
+                "Do not escape the character '\n'.",
             inputVariables: rag ? ["context"] : [],
             partialVariables: { format_instructions: formatInstructions }
         });
@@ -541,7 +542,8 @@ export default class CommonMailInsights extends ApplicationService {
         const systemPrompt = new PromptTemplate({
             template:
                 "Translate the insights of the incoming json.\n{format_instructions}\n" +
-                "Make sure to escape special characters by double slashes.",
+                "Make sure to escape special characters by double slashes." +
+                "Do not escape the character '\n'.",
             inputVariables: [],
             partialVariables: { format_instructions: formatInstructions }
         });
@@ -608,9 +610,10 @@ export default class CommonMailInsights extends ApplicationService {
             const llm = new BTPAzureOpenAIChatLLM();
 
             const systemPrompt = new PromptTemplate({
-                template: `Translate the following response of the customer support into ${language}.
+                template: `Translate the following response of the customer support or vendor support into ${language}.
                     {format_instructions}
-                    Make sure to escape special characters by double slashes.`,
+                    Make sure to escape special characters by double slashes.
+                    Do not escape the character '\n'.`,
                 inputVariables: [],
                 partialVariables: { format_instructions: formatInstructions }
             });
